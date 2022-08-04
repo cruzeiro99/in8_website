@@ -1,0 +1,57 @@
+@import (reference) "/variables.less";
+
+.SpinnerContainer {
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, .5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: wrap;
+	align-content: center;
+	color: @white;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .3s ease-out;
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+
+.Spinner {
+	width: 80px;
+	height: 80px;
+	border: 15px solid @white;
+	border-left-color: transparent;
+	animation: spin .5s linear infinite;
+	border-radius: 100%;
+	&.white {
+		border-color: @white;
+		border-left-color: transparent;
+	}
+	&.blue {
+		border-color: @blue;
+		border-left-color: transparent;
+	}
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+
+.CenteredSpinner {
+	width: 100%;
+	height: 100%;
+	padding: 50px 0;
+	display: flex;
+	justify-content: center;
+	.Spinner {
+		margin: 0 auto;
+	}
+}

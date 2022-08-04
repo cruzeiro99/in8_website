@@ -1,0 +1,167 @@
+@import (reference) "/variables.less";
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: RobotoRegular;
+}
+body, html, .root {
+	width: 100%;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('/assets/fonts/Roboto-Regular_0.ttf');
+}
+// @font-face {
+// 	font-family: 'HelveticaLight';
+// 	src: url('/assets/fonts/HelveticaUltraLtIt.ttf');
+// }
+.titleText {
+	font-family: RobotoRegular;
+}
+.text {
+	font-family: RobotoRegular;
+	color: white;
+}
+
+
+.App {
+	width: 100%;
+	height: auto;
+	.MainSec {
+		.header {
+			width: 100%;
+			height: 100px;
+			display: flex;
+			.logo {
+				width: 172px;
+				overflow: visible;
+			}
+		}
+		width: 100%;
+		height: 100vh;
+		background: no-repeat center url('/assets/images/index-image.jpg');
+		background-size: 100% 100%;
+		position: relative;
+	}
+	.RegisterSec {
+		width: 100%;
+		height: 100vh;
+		background: @blue;
+	}
+	.UsersSec {
+		width: 100%;
+		height: 100vh;
+		background: @white;
+		.UsersTable {
+			width: 100%;
+			border-collapse: collapse;
+			th, td {
+				padding: 10px 5px;
+				text-align: center;
+				border-left: 1px solid @blue;
+				border-bottom: 1px solid @blue;
+				&:first-child {
+					border-left: none;
+				}
+			}
+			tr:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+
+.solidButton {
+	padding: 1rem 2rem;
+	font-size: 1rem;
+	background: @darkBlue;
+	color: @blue;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		background: lighten(@darkBlue, 5%);
+		color: white;
+	}
+}
+
+.formGroup {
+	margin: 0 0 15px 0;
+	label {
+		color: @white;
+		.titleText();
+	}
+}
+
+.formField {
+	width: 100%;
+	height: 2rem;
+	font-size: 1.2rem;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid @white;
+	color: white;
+	outline: none;
+	&:focus {
+		outline: none;
+	}
+	&:placeholder {
+		color: @white;
+	}
+}
+
+.formContainer {
+	width: 100%;
+	height: auto;
+	position: relative;
+	// display: flex;
+	// align-items: center;
+	// flex-flow: wrap;
+}
+
+.breakFlex {
+	width: 100%;
+}
+
+.mobileMenu {
+	display: none;
+}
+.desktopMenu {
+	// background: rgba(255, 255, 255, .51);
+	display: inline-flex;
+	width: auto;
+	padding: 10px 20px 10px 0px;
+	margin-left: auto;
+	nav {
+		width: auto;
+		ul {
+			display: inline-flex;
+			li {
+				display: inline-flex;
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+
+
+

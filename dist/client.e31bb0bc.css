@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: RobotoRegular;
+}
+body,
+html,
+.root {
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('Roboto-Regular_0.5407e585.ttf');
+}
+.titleText {
+  font-family: RobotoRegular;
+}
+.text {
+  font-family: RobotoRegular;
+  color: white;
+}
+.App {
+  width: 100%;
+  height: auto;
+}
+.App .MainSec {
+  width: 100%;
+  height: 100vh;
+  background: no-repeat center url('index-image.3d2e7f32.jpg');
+  background-size: 100% 100%;
+  position: relative;
+}
+.App .MainSec .header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+.App .MainSec .header .logo {
+  width: 172px;
+  overflow: visible;
+}
+.App .RegisterSec {
+  width: 100%;
+  height: 100vh;
+  background: #29abe2;
+}
+.App .UsersSec {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+.App .UsersSec .UsersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+.App .UsersSec .UsersTable th,
+.App .UsersSec .UsersTable td {
+  padding: 10px 5px;
+  text-align: center;
+  border-left: 1px solid #29abe2;
+  border-bottom: 1px solid #29abe2;
+}
+.App .UsersSec .UsersTable th:first-child,
+.App .UsersSec .UsersTable td:first-child {
+  border-left: none;
+}
+.App .UsersSec .UsersTable tr:last-child td {
+  border-bottom: none;
+}
+.solidButton {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background: #012d51;
+  color: #29abe2;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.solidButton:focus {
+  outline: none;
+}
+.solidButton:hover {
+  background: #013b6a;
+  color: white;
+}
+.formGroup {
+  margin: 0 0 15px 0;
+}
+.formGroup label {
+  color: #fff;
+  font-family: RobotoRegular;
+}
+.formField {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: white;
+  outline: none;
+}
+.formField:focus {
+  outline: none;
+}
+.formField:placeholder {
+  color: #fff;
+}
+.formContainer {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.breakFlex {
+  width: 100%;
+}
+.mobileMenu {
+  display: none;
+}
+.desktopMenu {
+  display: inline-flex;
+  width: auto;
+  padding: 10px 20px 10px 0px;
+  margin-left: auto;
+}
+.desktopMenu nav {
+  width: auto;
+}
+.desktopMenu nav ul {
+  display: inline-flex;
+}
+.desktopMenu nav ul li {
+  display: inline-flex;
+  margin-left: 20px;
+}
+
+.SpinnerContainer {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  align-content: center;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.SpinnerContainer.show {
+  visibility: visible;
+  opacity: 1;
+}
+.Spinner {
+  width: 80px;
+  height: 80px;
+  border: 15px solid #fff;
+  border-left-color: transparent;
+  animation: spin 0.5s linear infinite;
+  border-radius: 100%;
+}
+.Spinner.white {
+  border-color: #fff;
+  border-left-color: transparent;
+}
+.Spinner.blue {
+  border-color: #29abe2;
+  border-left-color: transparent;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.CenteredSpinner {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+}
+.CenteredSpinner .Spinner {
+  margin: 0 auto;
+}
+
+
+/*# sourceMappingURL=/client.e31bb0bc.css.map */
