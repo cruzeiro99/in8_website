@@ -1,0 +1,14 @@
+{"name":"Peter","email":"peter@g.com","birthday":1659807529405,"phone":"31988776655","_id":"57ZUuxubobpXP4gM"}
+{"name":"Mike","email":"mike@g.com","birthday":1659807529405,"phone":"31988776655","_id":"Hv9iSFyxrTAEsUOS"}
+{"name":"Simon","email":"simon@g.com","birthday":1659807529405,"phone":"31988776655","_id":"L6S3GmKnSdqWnLrT"}
+{"name":"Adam","email":"adam@g.com","birthday":1659807529405,"phone":"31988776655","_id":"u0snxNU7oguJ6bWA"}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
+{"$$deleted":true,"_id":"57ZUuxubobpXP4gM"}
+{"$$deleted":true,"_id":"Hv9iSFyxrTAEsUOS"}
+{"$$deleted":true,"_id":"L6S3GmKnSdqWnLrT"}
+{"$$deleted":true,"_id":"u0snxNU7oguJ6bWA"}
+{"name":"Adam","email":"adam@g.com","birthday":1659808003369,"phone":"31988776655","_id":"YQMXjZ0IiW7ATit0"}
+{"name":"Mike","email":"mike@g.com","birthday":1659808003369,"phone":"31988776655","_id":"d62CpMWvXQChqngD"}
+{"name":"Peter","email":"peter@g.com","birthday":1659808003369,"phone":"31988776655","_id":"tl6CZ73mxTxSpH2B"}
+{"name":"Simon","email":"simon@g.com","birthday":1659808003369,"phone":"31988776655","_id":"HdwoTnwZMDZB1Ky8"}
+{"name":"mar","email":"mar@g.c","birthday":{"$$date":1660003200000},"phone":"31987873131","_id":"KRmOVuzI4GE7jONb"}

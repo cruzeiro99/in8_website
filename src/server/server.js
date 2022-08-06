@@ -1,25 +1,70 @@
 require("dotenv").config({path: "src/server/.env"});
 const fs = require("fs")
 const express = require("express");
+const bodyParser = require("body-parser");
+const db = require("./database/database")
+const domain = require("node:domain")
+const { required, serializeUsers, serializeUser, parseUser, Err } = require("./helpers.js")
 
+const { PORT, ENV } = process.env;
 
-const {PORT} = process.env;
 const api = express();
 
-
-const users = [
-	{name: "Adam", email: "adam@g.com", birthday: Date.now(), phone: "(31)000000000"},
-	{name: "Mike", email: "mike@g.com", birthday: Date.now(), phone: "(31)000000000"},
-	{name: "Peter", email: "peter@g.com", birthday: Date.now(), phone: "(31)000000000"},
-	{name: "Simon", email: "simon@g.com", birthday: Date.now(), phone: "(31)000000000"},
-]
+api.use(express.static('dist'));
 api.use((req, res, next) => {
-	res.setHeader("Cache-Control", "no-cache");
-	res.setHeader('Access-Control-Allow-Origin', '*')
+	let d = domain.create();
+	d.on('error', (err) => {
+			if (err) {
+				console.log('handler',err);
+				if (err.shouldReturn)
+					return res.json({error: err.message});
+				res.json({error: "Erro no servidor"});
+			} else {
+				next();
+			}
+	})
+	d.run(() => next())
+})
+api.use((req, res, next) => {
+	if (ENV === 'development') {
+		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Headers', "*");
+		res.setHeader("Cache-Control", "no-cache");
+	}
 	next();
 })
-api.get("/users", (req,res) => {
-	setTimeout(() => res.json(users), 2000)
+
+api.use(bodyParser.json());
+
+api.get("/users", (req, res) => {
+	db.users.find({}, (err, users) => {
+		if (err) {
+			console.error(err);
+			res.json({error: "Falha ao buscar usuários, tente novamente."})
+		} else {
+			res.json(serializeUsers(users))
+		}
+	})
+})
+
+api.post("/user", (req, res) => {
+	const user = req.body;
+	let result = required(user, ['name','birthday','email','phone']);
+	if (result) return res.json({error: "Todos os campos são obrigatórios"})
+	db.users.find({email: user.email}, (err, data) => {
+		if (data.length > 0) {
+			res.json({error: "E-mail já cadastrado"})
+		} else {
+			db.users.insert(parseUser(user), (err) => {
+				if (err) {
+					console.error('user.insert',err)
+					res.json({ error: "Falha, tente novamente." })
+				} else {
+					res.json({ message: "OK" })
+				}
+			});
+		}
+	})
 })
 
 api.listen(PORT, () => {

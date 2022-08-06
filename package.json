@@ -2,25 +2,29 @@
   "name": "in8_website",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/server/server.js",
   "scripts": {
     "dev:client": "parcel serve src/client/index.html",
-    "dev:server": "nodemon src/server/server.js"
+    "dev:server": "nodemon src/server/server.js",
+    "server": "node src/server/server.js"
+  },
+  "engine": {
+    "node": ">=8.0.0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
     "classnames": "^2.3.1",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "formik": "^2.2.9",
-    "mobx": "^6.6.1",
-    "mobx-react": "^7.5.2",
+    "nedb": "^1.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "react-toastify": "^9.0.7"
   },
   "devDependencies": {
     "less": "^4.1.3"

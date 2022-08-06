@@ -1,103 +1,85 @@
-import React from "react"
-// import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"
+import React,{useState} from "react"
 import "./index.less"
-import "./components/loading/spinners.js"
 import classnames from "classnames"
 import ReactDOM from "react-dom/client"
 import { Formik, Form, ErrorMessage, Field } from "formik"
 import ResourceLoader from "./ResourceLoader.js"
 import { Spinner, SpinnerWithContainer, CenteredSpinner } from "./components/loading/spinners.js"
-
-
+import { UsersTabs, UsersTable } from "./components/UsersTable"
+import MenuLayout from "./components/MenuLayout"
+import api from "./api.js"
 const logoSVG = require("./assets/icons/logo-in8-dev.svg")
-//const indexIMG = require("./assets/images/index-image.jpg")
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+const internCN = require("./assets/images/estagio.png")
 
-function FormField({type="text", value, setState}) {
+function MobileMenu({toggleMenu, active}) {
+	const iconCN = classnames('icon', {active});
+	const mobileMenuCN = classnames('MobileMenu', {active})
 	return (
-		<input type={type} value={value} onChange={(e) => setState(e.currentTarget.value)} />
+		<div className={mobileMenuCN}>
+			<div onClick={toggleMenu} className={iconCN}>
+				<div className="stick"></div>
+				<div className="stick"></div>
+				<div className="stick"></div>
+			</div>
+			<div className="content" onClick={toggleMenu}>
+				<MenuLayout/>
+			</div>
+		</div>
 	)
 }
 
-
-function UsersTable({users=[]}) {
-	return users && users.length > 0 ? (
-		<table className={"UsersTable"}>
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>E-mail</th>
-					<th>Nascimento</th>
-					<th>Telefone</th>
-				</tr>
-			</thead>
-			<tbody>
-				{users.map((user) => {
-					return (
-						<tr key={user.email}>
-							<td>{user.name}</td>
-							<td>{user.email}</td>
-							<td>{user.birthday}</td>
-							<td>{user.phone}</td>
-						</tr>
-					)
-				})}
-			</tbody>
-		</table>
-	) : <CenteredSpinner color="blue"/>
-}
-
-function MenuLayout() {
-	return (
-		<nav>
-			<ul>
-				<li><a href="#cadastro">Cadastro</a></li>
-				<li><a href="#lista">Lista</a></li>
-				<li><a href="#sobre">Sobre mim</a></li>
-			</ul>
-		</nav>
-	);
-}
-
 function App() {
+	const [active, setActive] = useState(false) //menu related
+	const [refetch, setRefetch] = useState(false) //user refetch
+	
+	const refetchUsers = () => setRefetch(!refetch)
+	const toggleMenu = (e) => setActive(!active)
+	const backToTop = (e) => document.querySelector("#main").scrollIntoView({behavior: 'smooth'});
+	const menuBackgroundCN = classnames('menuBackground', { active })
 	return (
 		<div className="App">
-			<div className="MainSec">
+			<ToastContainer position="bottom-right"/>
+			<div className={menuBackgroundCN} onClick={toggleMenu}></div>
+			<div id="main" className="MainSec">
 				<div className="container">
 					<div className="header">
-						<div className="logo">
-							<img src={logoSVG}/>
+						<div className="mobileMenuContainer">
+							<MobileMenu toggleMenu={toggleMenu} active={active}/>
 						</div>
+						<div className="logo"></div>
 						<div className="desktopMenu">
 							<MenuLayout/>
 						</div>
-						<div className="mobileMenu">
-							<MenuLayout/>
-						</div>
 					</div>
+					<img src={internCN} alt="Imagem Estagio" className="intern"/>
 				</div>
 			</div>
-			<div className="RegisterSec">
+			<div className="RegisterSec" id="register">
 				<div className="container">
-					<h1 className="text">CADASTRO</h1>
+					<h1 className="text centered">CADASTRO</h1>
 					<Formik 
-						initialValues={{
-							name: "Fulano", email: "fulano@g.c"
-						}} 
-						validate={(values) => {
-							let errors = {};
-							return errors
-						}}
-						onSubmit={(values, {setSubmitting}) => {
-							console.log({values})
-							setTimeout(() => {
+						initialValues={{}}
+						onSubmit={(values, { setSubmitting }) => {
+							api.post('user', values).then(({data, status, response}) => {
+								if (data.error) {
+									return toast.error(data.error)
+								}
+								toast.success("Usuário cadastrado");
+								refetchUsers();
+								document.querySelector("#list").scrollIntoView({
+									behavior: 'smooth'
+								})
+							}).finally(() => {
 								setSubmitting(false)
-							}, 1000)
+							});
 						}}
 					>
-						{({ isSubmitting }) => {
+						{({ isSubmitting, errors }) => {
 							const loadingCN = classnames('SpinnerContainer', {show: isSubmitting});
 							return (
-								<div className="formContainer">
+								<div className="form formContainer">
 									<div className={loadingCN}>
 										<Spinner/>
 										<div className="breakFlex"></div>
@@ -106,25 +88,21 @@ function App() {
 									<Form>
 										<div className="formGroup">
 											<label htmlFor="name">Nome</label>
-											<ErrorMessage name="name" component="h1"/>
-											<Field className="formField" type="text" name="name" id="name"/>
+											<Field className={'formField'} type="text" name="name" id="name"/>
 										</div>
 										<div className="formGroup">
 											<label htmlFor="email">E-mail</label>
-											<ErrorMessage name="email" component="h1"/>
-											<Field className="formField" type="email" name="email" id="email"/>
+											<Field className={'formField'} type="email" name="email" id="email"/>
 										</div>
 										<div className="formGroup">
 											<label htmlFor="birthday">Nascimento</label>
-											<ErrorMessage name="birthday" component="h1"/>
-											<Field className="formField" type="date" name="birthday" id="birthday"/>
+											<Field className={'formField'} type="date" name="birthday" id="birthday"/>
 										</div>
 										<div className="formGroup">
 											<label htmlFor="phone">Telefone</label>
-											<ErrorMessage name="phone" component="h1"/>
-											<Field className="formField" type="tel" name="phone" id="phone"/>
+											<Field className={'formField'} type="tel" name="phone" id="phone"/>
 										</div>
-										<button className="solidButton">CADASTRAR</button>
+										<button type="submit" disabled={isSubmitting} className="solidButton registerButton">CADASTRAR</button>
 									</Form>
 								</div>
 							)
@@ -132,14 +110,24 @@ function App() {
 					</Formik>
 				</div>
 			</div>
-			<div className="UsersSec">
+			<div className="UsersSec" id="list">
 				<div className="container">
-					<h1>LISTA DE CADASTRO</h1>
-					<ResourceLoader uri="/users" resourceName="users">
+					<h1 className="text centered blue">LISTA DE CADASTRO</h1>
+					<ResourceLoader refetch={refetch} uri="/users" resourceName="users">
+						<UsersTabs/>
 						<UsersTable/>
 					</ResourceLoader>
+					<div onClick={backToTop} className="backToTop"></div>
 				</div>
 			</div>
+			<footer className="FooterSec" id="about">
+				<address>
+					Fulano Ciclano Beltrano Foo Bar <br/>
+					<a href="mailto:fulano@company.com">fulano@company.com</a> <br/>
+					<a href="tel:+5531999991010">(31) 9 9999 1010</a> <br/>
+					Faculdade de Belo Horizonte
+				</address>
+			</footer>
 		</div>
 	)
 }
