@@ -10,7 +10,7 @@ const { PORT=3000, ENV } = process.env;
 
 const api = express();
 
-api.use(express.static('dist'));
+api.use(express.static('build'));
 api.use((req, res, next) => {
 	let d = domain.create();
 	d.on('error', (err) => {
@@ -37,6 +37,7 @@ api.use((req, res, next) => {
 api.use(bodyParser.json());
 
 api.get('/port', (req, res) => res.send(PORT));
+api.get('/env', (req, res) => res.send(process.env));
 
 api.get("/users", (req, res) => {
 	db.users.find({}, (err, users) => {
