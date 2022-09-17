@@ -2802,7 +2802,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.development.js":"../../node_modules/react/cjs/react.development.js"}],"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./cjs/react.development.js":"../../node_modules/react/cjs/react.development.js"}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -2834,7 +2834,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -2869,12 +2869,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.less":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.less":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/Roboto-Light_0.ttf":[["Roboto-Light_0.f0e8a09b.ttf","assets/fonts/Roboto-Light_0.ttf"],"assets/fonts/Roboto-Light_0.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/Roboto-Regular_0.ttf":[["Roboto-Regular_0.5407e585.ttf","assets/fonts/Roboto-Regular_0.ttf"],"assets/fonts/Roboto-Regular_0.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaNeue-UltraLight.woff2":[["HelveticaNeue-UltraLight.7ab7eb64.woff2","assets/fonts/HelveticaNeue-UltraLight.woff2"],"assets/fonts/HelveticaNeue-UltraLight.woff2"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaNeue-UltraLight.woff":[["HelveticaNeue-UltraLight.8323e7d8.woff","assets/fonts/HelveticaNeue-UltraLight.woff"],"assets/fonts/HelveticaNeue-UltraLight.woff"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaCondensed.ttf":[["HelveticaCondensed.9dd03bbd.ttf","assets/fonts/HelveticaCondensed.ttf"],"assets/fonts/HelveticaCondensed.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/index-image.jpg":[["index-image.3d2e7f32.jpg","assets/images/index-image.jpg"],"assets/images/index-image.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/index-image-mobile.jpg":[["index-image-mobile.f3739086.jpg","assets/images/index-image-mobile.jpg"],"assets/images/index-image-mobile.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/icons/logo-in8-dev.png":[["logo-in8-dev.0d0cb4ec.png","assets/icons/logo-in8-dev.png"],"assets/icons/logo-in8-dev.png"],"/opt/sublime_text/dev/in8_website/src/client/assets/icons/topo-pag.svg":[["topo-pag.89f30a9c.svg","assets/icons/topo-pag.svg"],"assets/icons/topo-pag.svg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/rodape-desktop.jpg":[["rodape-desktop.1133f93e.jpg","assets/images/rodape-desktop.jpg"],"assets/images/rodape-desktop.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/rodape-mobile.jpg":[["rodape-mobile.11f9ef87.jpg","assets/images/rodape-mobile.jpg"],"assets/images/rodape-mobile.jpg"],"_css_loader":"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/classnames/index.js":[function(require,module,exports) {
+},{"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/Roboto-Light_0.ttf":[["Roboto-Light_0.f0e8a09b.ttf","assets/fonts/Roboto-Light_0.ttf"],"assets/fonts/Roboto-Light_0.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/Roboto-Regular_0.ttf":[["Roboto-Regular_0.5407e585.ttf","assets/fonts/Roboto-Regular_0.ttf"],"assets/fonts/Roboto-Regular_0.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaNeue-UltraLight.woff2":[["HelveticaNeue-UltraLight.7ab7eb64.woff2","assets/fonts/HelveticaNeue-UltraLight.woff2"],"assets/fonts/HelveticaNeue-UltraLight.woff2"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaNeue-UltraLight.woff":[["HelveticaNeue-UltraLight.8323e7d8.woff","assets/fonts/HelveticaNeue-UltraLight.woff"],"assets/fonts/HelveticaNeue-UltraLight.woff"],"/opt/sublime_text/dev/in8_website/src/client/assets/fonts/HelveticaCondensed.ttf":[["HelveticaCondensed.9dd03bbd.ttf","assets/fonts/HelveticaCondensed.ttf"],"assets/fonts/HelveticaCondensed.ttf"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/index-image.jpg":[["index-image.3d2e7f32.jpg","assets/images/index-image.jpg"],"assets/images/index-image.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/index-image-mobile.jpg":[["index-image-mobile.f3739086.jpg","assets/images/index-image-mobile.jpg"],"assets/images/index-image-mobile.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/icons/logo-in8-dev.png":[["logo-in8-dev.0d0cb4ec.png","assets/icons/logo-in8-dev.png"],"assets/icons/logo-in8-dev.png"],"/opt/sublime_text/dev/in8_website/src/client/assets/icons/topo-pag.svg":[["topo-pag.89f30a9c.svg","assets/icons/topo-pag.svg"],"assets/icons/topo-pag.svg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/rodape-desktop.jpg":[["rodape-desktop.1133f93e.jpg","assets/images/rodape-desktop.jpg"],"assets/images/rodape-desktop.jpg"],"/opt/sublime_text/dev/in8_website/src/client/assets/images/rodape-mobile.jpg":[["rodape-mobile.11f9ef87.jpg","assets/images/rodape-mobile.jpg"],"assets/images/rodape-mobile.jpg"],"_css_loader":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
 /*!
   Copyright (c) 2018 Jed Watson.
@@ -40946,7 +40946,7 @@ module.exports = {
   clarifyTimeoutError: false
 };
 
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -41098,7 +41098,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -41185,14 +41185,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -42985,7 +42985,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../node_modules/axios/lib/helpers/toFormData.js":[function(require,module,exports) {
+},{"base64-js":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../node_modules/axios/lib/helpers/toFormData.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 'use strict';
 
@@ -43060,7 +43060,7 @@ function toFormData(obj, formData) {
 
 module.exports = toFormData;
 
-},{"../utils":"../../node_modules/axios/lib/utils.js","buffer":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../node_modules/axios/lib/core/settle.js":[function(require,module,exports) {
+},{"../utils":"../../node_modules/axios/lib/utils.js","buffer":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../node_modules/axios/lib/core/settle.js":[function(require,module,exports) {
 'use strict';
 
 var AxiosError = require('./AxiosError');
@@ -43581,7 +43581,7 @@ module.exports = function xhrAdapter(config) {
 // eslint-disable-next-line strict
 module.exports = null;
 
-},{}],"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -43939,7 +43939,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"../utils":"../../node_modules/axios/lib/utils.js","../helpers/normalizeHeaderName":"../../node_modules/axios/lib/helpers/normalizeHeaderName.js","../core/AxiosError":"../../node_modules/axios/lib/core/AxiosError.js","./transitional":"../../node_modules/axios/lib/defaults/transitional.js","../helpers/toFormData":"../../node_modules/axios/lib/helpers/toFormData.js","../adapters/xhr":"../../node_modules/axios/lib/adapters/xhr.js","../adapters/http":"../../node_modules/axios/lib/adapters/xhr.js","./env/FormData":"../../node_modules/axios/lib/helpers/null.js","process":"../../../../../nodejs/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../node_modules/axios/lib/core/transformData.js":[function(require,module,exports) {
+},{"../utils":"../../node_modules/axios/lib/utils.js","../helpers/normalizeHeaderName":"../../node_modules/axios/lib/helpers/normalizeHeaderName.js","../core/AxiosError":"../../node_modules/axios/lib/core/AxiosError.js","./transitional":"../../node_modules/axios/lib/defaults/transitional.js","../helpers/toFormData":"../../node_modules/axios/lib/helpers/toFormData.js","../adapters/xhr":"../../node_modules/axios/lib/adapters/xhr.js","../adapters/http":"../../node_modules/axios/lib/adapters/xhr.js","./env/FormData":"../../node_modules/axios/lib/helpers/null.js","process":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../node_modules/axios/lib/core/transformData.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -46201,7 +46201,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/loading/spinners.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/loading/spinners.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46386,7 +46386,7 @@ module.exports = "/logo-in8-dev.a321d9b4.svg";
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/images/estagio.png":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"assets/images/estagio.png":[function(require,module,exports) {
 module.exports = "/estagio.f0e12441.png";
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -46631,7 +46631,7 @@ function App() {
 var root = _client.default.createRoot(document.querySelector(".root"));
 
 root.render( /*#__PURE__*/_react.default.createElement(App, null));
-},{"react":"../../node_modules/react/index.js","./index.less":"index.less","classnames":"../../node_modules/classnames/index.js","react-dom/client":"../../node_modules/react-dom/client.js","formik":"../../node_modules/formik/dist/formik.esm.js","./ResourceLoader.js":"ResourceLoader.js","./components/loading/spinners.js":"components/loading/spinners.js","./components/UsersTable":"components/UsersTable.js","./components/MenuLayout":"components/MenuLayout.js","./api.js":"api.js","./assets/icons/logo-in8-dev.svg":"assets/icons/logo-in8-dev.svg","react-toastify":"../../node_modules/react-toastify/dist/react-toastify.esm.mjs","react-toastify/dist/ReactToastify.css":"../../node_modules/react-toastify/dist/ReactToastify.css","./assets/images/estagio.png":"assets/images/estagio.png"}],"../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","./index.less":"index.less","classnames":"../../node_modules/classnames/index.js","react-dom/client":"../../node_modules/react-dom/client.js","formik":"../../node_modules/formik/dist/formik.esm.js","./ResourceLoader.js":"ResourceLoader.js","./components/loading/spinners.js":"components/loading/spinners.js","./components/UsersTable":"components/UsersTable.js","./components/MenuLayout":"components/MenuLayout.js","./api.js":"api.js","./assets/icons/logo-in8-dev.svg":"assets/icons/logo-in8-dev.svg","react-toastify":"../../node_modules/react-toastify/dist/react-toastify.esm.mjs","react-toastify/dist/ReactToastify.css":"../../node_modules/react-toastify/dist/ReactToastify.css","./assets/images/estagio.png":"assets/images/estagio.png"}],"../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -46659,7 +46659,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36079" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39385" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -46835,5 +46835,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../nodejs/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../../home/user/.nvm/versions/node/v18.8.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/client.e31bb0bc.js.map

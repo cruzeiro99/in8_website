@@ -6,7 +6,7 @@ const db = require("./database/database")
 const domain = require("node:domain")
 const { required, serializeUsers, serializeUser, parseUser, Err } = require("./helpers.js")
 
-const { PORT, ENV } = process.env;
+const { PORT=3000, ENV } = process.env;
 
 const api = express();
 
@@ -27,14 +27,16 @@ api.use((req, res, next) => {
 })
 api.use((req, res, next) => {
 	if (ENV === 'development') {
-		res.setHeader('Access-Control-Allow-Origin', '*');
-		res.setHeader('Access-Control-Allow-Headers', "*");
 		res.setHeader("Cache-Control", "no-cache");
 	}
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Headers', "*");
 	next();
 })
 
 api.use(bodyParser.json());
+
+api.get('/port', (req, res) => res.send(PORT));
 
 api.get("/users", (req, res) => {
 	db.users.find({}, (err, users) => {

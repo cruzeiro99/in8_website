@@ -7,17 +7,18 @@ cd in8_website &&
 npm install
 ```
 
-#### Se não tiver parcel e nodemon instalado globalmente:
+#### Se não tiver parcel instalado globalmente:
 ```
-npm run server &&
+npm run server
+
 firefox http://localhost:3000
 ```
 
 #### Se der erro o método a cima e/ou tenha:
 ```
-rm -rf dist .cache &&
-npm install -g parcel-bundler nodemon &&
-npm run dev:server &&
-npm run dev:client &&
+rm -rf dist .cache
+npm install -g parcel-bundler
+npm run server
+npm run dev:client
 firefox http://localhost:3000
 ```

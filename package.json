@@ -6,7 +6,8 @@
   "scripts": {
     "dev:client": "parcel serve src/client/index.html",
     "dev:server": "nodemon src/server/server.js",
-    "server": "node src/server/server.js"
+    "server": "node src/server/server.js",
+    "build": "parcel build src/client/index.html"
   },
   "engine": {
     "node": ">=8.0.0"
